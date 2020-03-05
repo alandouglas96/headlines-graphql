@@ -1,15 +1,10 @@
-const SpanishHeadlines = require("./models/spanish-headlines.js");
-const BritishHeadlines = require("./models/british-headlines");
+const HeadlineSchema = require("./models/headlines.js/index.js");
 
 const resolvers = {
   Query: {
-    spain: async (_, args) => {
-      return findData(args, SpanishHeadlines);
+    headline: async (_, args) => {
+      return findData(args, HeadlineSchema);
     },
-
-    uk: async (_, args) => {
-      return findData(args, BritishHeadlines);
-    }
   }
 };
 

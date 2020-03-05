@@ -2,8 +2,7 @@ const { gql } = require("apollo-server");
 
 const typeDefs = gql`
   type Query {
-    spain (newspaper: String, day: Int, month: Int, year: Int ): [Headlines]
-    uk (newspaper: String, day: Int, month: Int, year: Int ): [Headlines]
+    headline (newspaper: String, day: Int, month: Int, year: Int ): [Headlines]
   }
 
   type Headlines {
@@ -14,6 +13,7 @@ const typeDefs = gql`
     time: String
     newspaper: String
     headline: String
+    locale: String
   }
 
 `;
