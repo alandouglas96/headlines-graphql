@@ -1,4 +1,4 @@
-const HeadlineSchema = require("./models/headlines.js/index.js");
+const HeadlineSchema = require("./models/headlines.js");
 
 const resolvers = {
   Query: {
@@ -10,7 +10,7 @@ const resolvers = {
 
 module.exports = resolvers;
 
-async function findData(currentArgs, headlineModel) {
+async function findData (currentArgs, headlineModel) {
 
   let query = {};
 
