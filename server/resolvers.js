@@ -1,4 +1,4 @@
-const HeadlineSchema = require("./models/headlines.js/index.js");
+const HeadlineSchema = require("./models/headlines.js");
 
 const resolvers = {
   Query: {
