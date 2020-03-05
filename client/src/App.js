@@ -5,35 +5,37 @@ import ApolloClient from 'apollo-boost';
 import { gql } from "apollo-boost";
 
 
-function App() {
+function App () {
 
-  const [headline, setHeadline] = useState([]);
+  const [headlines, setHeadline] = useState([]);
 
   const client = new ApolloClient({
     uri: 'http://localhost:4000/',
   });
+
   useEffect(() => {
 
     client
       .query({
         query: gql`
         {
-          headline (newspaper: "laVanguardia"){
+          headline {
             newspaper
             headline
           }
-        }
-        `
+        }`
       })
-      .then(result => setHeadline(result));
+      .then(result => {
+        // console.log(result.data.headline[0].newspaper)
+        setHeadline(result.data)
+      });
 
-    }, []);
-    console.log(headline.data);
-
+  }, []);
 
   return (
     <div className="App">
-      <HeadLineList />
+      <HeadLineList headlines={headlines} />
+      {console.log(headlines)}
     </div>
   );
 }

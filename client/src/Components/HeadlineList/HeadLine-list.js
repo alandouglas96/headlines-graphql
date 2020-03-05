@@ -2,11 +2,12 @@ import React from 'react';
 import './style.css';
 import HeadLineItem from '../HeadLine-item/HeadLine-item';
 
-function HeadLineList () {
+function HeadLineList (props) {
   return (
     <div className="HeadLineList">
-      <h1>HeadLineList works</h1>
-      <HeadLineItem/>
+      {props.headlines.map(headline => {
+        return <HeadLineItem headline={headline}/>
+   })}
     </div>
   );
 }
