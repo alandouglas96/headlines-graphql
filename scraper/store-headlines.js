@@ -1,5 +1,4 @@
-const SpanishHeadlines = require("../server/models/spanish-headlines");
-const BritishHeadlines = require("../server/models/british-headlines")
+const HeadlineSchema = require("../server/models/headlines");
 const fetchSpanishHeadLines = require("./fetch-spain-headlines");
 const fetchBritishHeadLines = require("./fetch-uk-headlines");
 
@@ -29,7 +28,7 @@ fetchSpanishHeadLines().then(data => {
   });
 
   async function hashExists(thisHash) {
-    return SpanishHeadlines.exists({ hash: thisHash }).then(val => {
+    return HeadlineSchema.exists({ hash: thisHash }).then(val => {
         if (!val) return true;
         return false;
     });
@@ -50,7 +49,7 @@ fetchSpanishHeadLines().then(data => {
 
       if (arr[j]) {
 
-        const doc = new SpanishHeadlines({ ...dataArr[j] });
+        const doc = new HeadlineSchema({ ...dataArr[j] });
         const prom = new Promise((res, rej) => {
           doc.save(function(err, item) {
             if (err) rej(err);
@@ -91,7 +90,7 @@ fetchBritishHeadLines().then(data => {
   });
 
   async function hashExists(thisHash) {
-    return BritishHeadlines.exists({ hash: thisHash }).then(val => {
+    return HeadlineSchema.exists({ hash: thisHash }).then(val => {
         if (!val) return true;
         return false;
     });
@@ -112,7 +111,7 @@ fetchBritishHeadLines().then(data => {
 
       if (arr[j]) {
 
-        const doc = new BritishHeadlines({ ...dataArr[j] });
+        const doc = new HeadlineSchema({ ...dataArr[j] });
         const prom = new Promise((res, rej) => {
           doc.save(function(err, item) {
             if (err) rej(err);
