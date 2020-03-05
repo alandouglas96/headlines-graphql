@@ -23,7 +23,8 @@ fetchSpanishHeadLines().then(data => {
       year: data.year,
       time: data.time,
       newspaper: key,
-      headline: value
+      headline: value,
+      locale: 'Spain'
     });
   });
 
@@ -85,7 +86,8 @@ fetchBritishHeadLines().then(data => {
       year: data.year,
       time: data.time,
       newspaper: key,
-      headline: value
+      headline: value,
+      locale: 'British'
     });
   });
 

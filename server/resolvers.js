@@ -19,7 +19,7 @@ async function findData (currentArgs, headlineModel) {
     
     query[key] = currentArgs[key];
   }
-
+  
   if (Object.keys(query).length) {
     return await headlineModel.find(query);
   } else {

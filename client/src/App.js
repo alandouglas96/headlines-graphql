@@ -14,7 +14,6 @@ function App () {
   });
 
   useEffect(() => {
-
     client
       .query({
         query: gql`
@@ -26,16 +25,14 @@ function App () {
         }`
       })
       .then(result => {
-        // console.log(result.data.headline[0].newspaper)
-        setHeadline(result.data)
+        setHeadline(result.data.headline)
       });
 
   }, []);
 
   return (
     <div className="App">
-      <HeadLineList headlines={headlines} />
-      {console.log(headlines)}
+      {headlines && <HeadLineList headlines={headlines} />}
     </div>
   );
 }

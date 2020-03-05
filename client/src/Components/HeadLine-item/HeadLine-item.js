@@ -1,10 +1,11 @@
 import React from 'react';
 import './style.css';
 
-function HeadLineItem () {
+function HeadLineItem ({headline}) {
+
   return (
     <div className="HeadLineItem">
-      <h1>HeadLineItem works</h1>
+      <p>{headline.headline}</p>
     </div>
   );
 }
