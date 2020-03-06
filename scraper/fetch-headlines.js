@@ -9,9 +9,8 @@ const headlines = {
   day: Number(currentTime.add(1, 'hours').format("DD")),
   month: Number(currentTime.add(1, 'hours').format("MM")),
   year: Number(currentTime.add(1, 'hours').format("YYYY")),
-  time: moment(currentTime.add(1, 'hours').format("LT")),
+  time: currentTime.add(1, 'hours').format("LT"),
   headline: {}
-
 };
 
 async function getHeadline(url, path) {
@@ -33,12 +32,11 @@ async function fetchHeadlines() {
     const headline = await getHeadline(obj.url, obj.path);
     headlines.headline[obj.newspaper] = headline
     return headline
-
-
   }));
 console.log(headlines);
 
   return headlines;
 }
+
 fetchHeadlines()
 module.exports = fetchHeadlines;
