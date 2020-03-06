@@ -7,12 +7,16 @@ async function getHeadline() {
     const data = response.body;
     const $ = cheerio.load(`${data}`);
     //DATA-START
-    const headline = $('').html(); //INSERT HTML PATH
+    const headline = $('').html();
+        
+
+    //INSERT HTML PATH
     // const subtitle = $('').html(); //INSERT HTML PATH
     // const author = $('').html();   //INSERT HTML PATH
     // const place = $('').html();    //INSERT HTML PATH
     // const story = $('').html();    //INSERT HTML PATH
     // DATA-END
+
 
     return headline;
   } catch (error) {
