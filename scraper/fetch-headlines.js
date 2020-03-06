@@ -9,10 +9,12 @@ const headlines = {
   day: Number(currentTime.add(1, 'hours').format("DD")),
   month: Number(currentTime.add(1, 'hours').format("MM")),
   year: Number(currentTime.add(1, 'hours').format("YYYY")),
-  time: moment(currentTime.add(1, 'hours').format("LT"))
+  time: moment(currentTime.add(1, 'hours').format("LT")),
+  headline: {}
+
 };
 
-async function getHeadline (url, path) {
+async function getHeadline(url, path) {
   try {
     const response = await got(url);
     const data = response.body;
@@ -26,14 +28,17 @@ async function getHeadline (url, path) {
   }
 };
 
-async function fetchHeadlines () {
+async function fetchHeadlines() {
   await Promise.all(newspapers.map(async obj => {
-    let headline = await getHeadline(obj.url, obj.path);
+    const headline = await getHeadline(obj.url, obj.path);
     headlines.headline[obj.newspaper] = headline
+    return headline
+
+
   }));
+console.log(headlines);
+
   return headlines;
 }
-
-fetchHeadlines();
-
+fetchHeadlines()
 module.exports = fetchHeadlines;
