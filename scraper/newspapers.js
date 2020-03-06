@@ -75,7 +75,7 @@ const newspapers = [{
   url: 'https://www.bbc.com/',
   path: 'li.media-list__item--1 a.media__link',
   country: 'UK'
-},
+}
 ];
 
 exports.newspapers = newspapers
