@@ -20,8 +20,8 @@ fetchHeadLines().then(data => {
       year: data.year,
       time: data.time,
       newspaper: key,
-      headline: value,
-      locale: 'Spain'
+      headline: value, //not all the scraper headlines work properly, check database. 
+      locale: 'Spain' //we need to add the brittish one
     });
   });
 
@@ -61,7 +61,7 @@ fetchHeadLines().then(data => {
     return Promise.all(promises)
   }).then(items => {
     console.log(items)
-    console.log('==================>>>>>>>>>>   SPANISH  ITEMS INSERTED : ', items.length, '   <<<<<<<<<<==================')
+    console.log('==================>>>>>>>>>>  ITEMS INSERTED : ', items.length, '   <<<<<<<<<<==================')
     mongoose.connection.close();
   }).catch(err => console.log(err));
 
