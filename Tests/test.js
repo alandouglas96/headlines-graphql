@@ -1,3 +1,13 @@
+// test if the headline location exists
+
+// test if we get a non empty string back as headline
+// check if headline is stored in database
+// check if headlines are rendered when called
+
+
+
+
+
 const { createTestClient } = require('apollo-server-testing');
 const gql = require('graphql-tag');
 const nock = require('nock');
