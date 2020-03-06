@@ -10,7 +10,6 @@ const headlines = {
   month: Number(currentTime.add(1, 'hours').format("MM")),
   year: Number(currentTime.add(1, 'hours').format("YYYY")),
   time: currentTime.add(1, 'hours').format("LT"),
-  contry: [],
   headlines: {},
 };
 
@@ -37,6 +36,5 @@ async function fetchHeadlines () {
   console.log(headlines)
   return headlines;
 }
-fetchHeadlines ();
 
 module.exports = fetchHeadlines;

@@ -19,7 +19,7 @@ fetchHeadLines().then(data => {
       year: data.year,
       time: data.time,
       newspaper: key,
-      headline: value, //not all the scraper headlines work properly, check database. 
+      headline: value.headline, //not all the scraper headlines work properly, check database. 
       locale: value.country //we need to add the brittish one
     });
   });
