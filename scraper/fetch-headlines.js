@@ -3,11 +3,13 @@ const got = require('got');
 const cheerio = require('cheerio');
 const newspapers = require('./newspapers.js');
 
+const currentTime = Date.now();
+
 const headlines = {
-  day: Number(moment(Date.now()).add(1, 'hours').format("DD")),
-  month: Number(moment(Date.now()).add(1, 'hours').format("MM")),
-  year: Number(moment(Date.now()).add(1, 'hours').format("YYYY")),
-  time: moment(Date.now()).add(1, 'hours').format("LT")
+  day: Number(currentTime.add(1, 'hours').format("DD")),
+  month: Number(currentTime.add(1, 'hours').format("MM")),
+  year: Number(currentTime.add(1, 'hours').format("YYYY")),
+  time: moment(currentTime.add(1, 'hours').format("LT")
 };
 
 async function getHeadline (url, path) {
@@ -26,7 +28,7 @@ async function getHeadline (url, path) {
 
 async function fetchHeadlines () {
 
-  for (let i = 0; i < newspapers.length; i++){
+  for (let i = 0; i < newspapers.length; i++) {
     console.log(newspapers[i])
   }
 
@@ -35,7 +37,7 @@ async function fetchHeadlines () {
   //   });
   //   return headlines;
   // }
-  
+
 }
 
 fetchHeadlines();
