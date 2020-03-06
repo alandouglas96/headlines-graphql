@@ -6,6 +6,7 @@ function HeadLineList ({headlines}) {
   
   return (
     <div className="HeadLineList">
+      <div className="header">Headlines around the world</div>
       {headlines.map(headline => {
         return <HeadLineItem headline={headline}/>
    })}

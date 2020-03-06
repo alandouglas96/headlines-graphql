@@ -1,0 +1,18 @@
+.HeadLineItem{
+  width: 600px;
+  height: 150px;
+  border: 1px solid lightgray;
+  margin: 20px;
+  border-radius: 7px;
+  background-color: coral;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  padding: 30px;
+}
+
+.newspaper{
+  font-size: 25px;
+  margin-top: 50px;
+}

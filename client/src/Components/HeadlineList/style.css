@@ -1,0 +1,10 @@
+.HeadLineList{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.header{
+  font-size: 40px;
+  margin: 10px;
+}
