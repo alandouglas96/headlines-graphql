@@ -40,7 +40,7 @@
   width: 100px;
   height: 100px;
   background-size: cover;
-  align-self: center;
+ margin-left: 100px;
 }
 
 #flagSpain {

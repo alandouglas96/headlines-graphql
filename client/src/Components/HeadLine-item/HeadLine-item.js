@@ -5,7 +5,6 @@ function HeadLineItem ({ headline }) {
 
   return (
     <div className="HeadLineItem" onClick={() => {
-      console.log('clicked')
       window.open(headline.url);
     }
     }>

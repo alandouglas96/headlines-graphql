@@ -4,6 +4,7 @@ import HeadLineList from './Components/HeadlineList/HeadLine-list';
 import ApolloClient from 'apollo-boost';
 import { gql } from "apollo-boost";
 import SearchBar from './Components/SearchBar/SearchBar';
+import breakingNews from './breaking.png'
 
 function bySearchQuery(query) {
   const regex = new RegExp(query)
@@ -45,6 +46,7 @@ function App () {
   
   return (
     <div className="App">
+      <img src={breakingNews} className="breakingNews"></img>
       <SearchBar onSearchQueryUpdate={setSearchQuery}></SearchBar>
       {headlinesToShow && <HeadLineList headlines={headlinesToShow} />}
 
