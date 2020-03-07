@@ -14,6 +14,7 @@ const typeDefs = gql`
     newspaper: String
     headline: String
     locale: String
+    url: String
   }
 
 `;

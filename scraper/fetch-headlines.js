@@ -31,7 +31,7 @@ async function getHeadline (url, path) {
 async function fetchHeadlines () {
   await Promise.all(newspapers.map(async obj => {
     const headline = await getHeadline(obj.url, obj.path);    
-    headlines.headlines[obj.newspaper] = {headline, country: obj.country}
+    headlines.headlines[obj.newspaper] = {headline, country: obj.country, url: obj.url};
     return headline
   }));
   console.log(headlines)
