@@ -32,6 +32,7 @@ function App () {
             newspaper
             headline
             locale
+            url
           }
         }`
       })
@@ -46,6 +47,7 @@ function App () {
     <div className="App">
       <SearchBar onSearchQueryUpdate={setSearchQuery}></SearchBar>
       {headlinesToShow && <HeadLineList headlines={headlinesToShow} />}
+
     </div>
   );
 }

@@ -7,15 +7,15 @@ function HeadLineList ({ headlines }) {
 
   return (
     <div className="HeadLineList">
-      <img src={breakingNews}className="breakingNews"></img>
-        <h1 className="country">Spain</h1>
+      <img src={breakingNews} className="breakingNews"></img>
+      <div className='flag' id="flagSpain"></div>
       <div className="wrapper">
         {headlines.map(headline => {
           if (headline.locale === 'Spain')
             return <HeadLineItem headline={headline} />
         })}
       </div>
-      <h1 className="country">UK</h1>
+      <div className='flag' id="flagUK"></div>
       <div className="wrapper">
         {headlines.map(headline => {
           if (headline.locale === 'UK')
