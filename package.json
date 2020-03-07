@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jasmine",
     "start": "node index.js"
   },
   "author": "",
@@ -32,6 +32,7 @@
     "underscore": "^1.9.2"
   },
   "devDependencies": {
+    "jasmine": "^3.5.0",
     "jest": "^24.9.0"
   }
 }
