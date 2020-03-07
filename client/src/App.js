@@ -3,11 +3,21 @@ import './App.css';
 import HeadLineList from './Components/HeadlineList/HeadLine-list';
 import ApolloClient from 'apollo-boost';
 import { gql } from "apollo-boost";
+import SearchBar from './Components/SearchBar/SearchBar';
 
+function bySearchQuery(query) {
+  const regex = new RegExp(query)
+  return headline => regex.test(headline.headline)
+}
 
 function App () {
 
   const [headlines, setHeadline] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const headlinesToShow = searchQuery 
+    ? headlines.filter(bySearchQuery(searchQuery)) 
+    : headlines
 
   const client = new ApolloClient({
     uri: 'http://localhost:4000/',
@@ -31,10 +41,11 @@ function App () {
 
   }, []);
 
+  
   return (
     <div className="App">
-      {console.log(headlines)}
-      {headlines && <HeadLineList headlines={headlines} />}
+      <SearchBar onSearchQueryUpdate={setSearchQuery}></SearchBar>
+      {headlinesToShow && <HeadLineList headlines={headlinesToShow} />}
     </div>
   );
 }
