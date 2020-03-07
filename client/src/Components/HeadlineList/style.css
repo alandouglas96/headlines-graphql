@@ -23,13 +23,30 @@
   width: 500px;
   margin-top: 30px;
   align-self: center;
+  margin-bottom: 50px;
+  ;
 }
 
 ::-webkit-scrollbar {
   display: none;
 }
 
-.country{
+.country {
   font-size: 40px;
   font-weight: bold;
+}
+
+.flag {
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  align-self: center;
+}
+
+#flagSpain {
+  background-image: url('../../flag_spain.png');
+}
+
+#flagUK {
+  background-image: url('../../flag_uk.png');
 }
