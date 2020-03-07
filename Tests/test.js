@@ -1,6 +1,6 @@
 const {getHeadline} = require('../scraper/fetch-headlines');
 const { newspapers } = require('../scraper/newspapers');
-
+const cheerio = require('cheerio');
 
 // test if the headline location exists
 
@@ -10,12 +10,14 @@ const { newspapers } = require('../scraper/newspapers');
 
 const laVanGuardia = newspapers.find(obj => obj.newspaper === 'la-vanguardia');
 
+'./newspaperStatic.html'.getElementsByTagName('h3')[0].innerHTML
 
-describe("A suite", function () {
-  it("contains spec with an expectation", async function () {
-    const result = await getHeadline('./newspaperStatic.html', laVanGuardia.path);
-    console.log('result: ', result)
-    expect(true).toBe(true);
-  });
-});
+
+// describe("A suite", function () {
+//   it("contains spec with an expectation", async function () {
+//     const result = await getHeadline('./newspaperStatic.html', laVanGuardia.path);
+//     console.log('result: ', result)
+//     expect(true).toBe(true);
+//   });
+// });
 

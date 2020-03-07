@@ -38,6 +38,6 @@ async function fetchHeadlines () {
   return headlines;
 }
 
-module.exports = {fetchHeadlines, getHeadline};
+module.exports = fetchHeadlines;
 
 

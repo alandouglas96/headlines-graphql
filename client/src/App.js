@@ -21,6 +21,7 @@ function App () {
           headline {
             newspaper
             headline
+            locale
           }
         }`
       })
@@ -32,6 +33,7 @@ function App () {
 
   return (
     <div className="App">
+      {console.log(headlines)}
       {headlines && <HeadLineList headlines={headlines} />}
     </div>
   );

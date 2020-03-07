@@ -5,7 +5,7 @@ function HeadLineItem ({headline}) {
 
   return (
     <div className="HeadLineItem">
-      <p>{headline.headline}</p>
+      <div className="headline">{headline.headline}</div>
       <h4 className='newspaper'>{headline.newspaper}</h4>
     </div>
   );

@@ -1,20 +1,25 @@
 import React from 'react';
 import './style.css';
 import HeadLineItem from '../HeadLine-item/HeadLine-item';
+import breakingNews from '../../breaking.png'
 
 function HeadLineList ({ headlines }) {
 
   return (
     <div className="HeadLineList">
-      <div className="header">Headlines around the world</div>
-      <div className="filter">
-        <h3>Filter</h3>
-        <div>select country</div>
-        <div>select newspaper</div>
-      </div>
+      <img src={breakingNews}className="breakingNews"></img>
+        <h1 className="country">Spain</h1>
       <div className="wrapper">
         {headlines.map(headline => {
-          return <HeadLineItem headline={headline} />
+          if (headline.locale === 'Spain')
+            return <HeadLineItem headline={headline} />
+        })}
+      </div>
+      <h1 className="country">UK</h1>
+      <div className="wrapper">
+        {headlines.map(headline => {
+          if (headline.locale === 'UK')
+            return <HeadLineItem headline={headline} />
         })}
       </div>
     </div>

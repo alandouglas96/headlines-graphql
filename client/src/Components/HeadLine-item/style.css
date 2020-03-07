@@ -1,18 +1,29 @@
-.HeadLineItem{
-  width: 400px;
-  height: 250px;
-  border: 1px solid lightgray;
+.HeadLineItem {
+  position: relative;
+  min-width: 600px;
+  height: 500px;
   margin: 20px;
-  border-radius: 7px;
-  background-color: coral;
-  color: white;
+  background-image: url('../../pngwave.png'); 
+  background-size: cover; 
   font-size: 20px;
   text-align: center;
   font-weight: bold;
-  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.newspaper{
+.newspaper {
+  position: absolute;
   font-size: 25px;
-  margin-top: 50px;
+  top: 350px;
+}
+
+.headline {
+  max-width: 400px;
+  margin-top: 175px;
+  margin-left: 50px;
+  font-size: 30px;
+  color: rgb(161, 25, 25);
+  font-weight: bold;
 }
