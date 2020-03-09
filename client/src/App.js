@@ -4,7 +4,7 @@ import HeadLineList from './Components/HeadlineList/HeadLine-list';
 import ApolloClient from 'apollo-boost';
 import { gql } from "apollo-boost";
 import SearchBar from './Components/SearchBar/SearchBar';
-import breakingNews from './breaking.png'
+import breakingNews from './pictures/breaking.png'
 
 function bySearchQuery(query) {
   const regex = new RegExp(query)
