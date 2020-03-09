@@ -29,8 +29,7 @@ describe("Test if all headlines return a headline", function () {
     const result = await fetchHeadlines();
     let empty = false;
     for (headline in result.headlines) {
-      console.log('headline',headline)
-      if (headline.headline === '' || undefined)
+      if (result.headlines[headline].headline === '' || undefined)
         empty = true;
     }
     expect(empty).toBe(false);
