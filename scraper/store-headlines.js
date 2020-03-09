@@ -1,5 +1,5 @@
 const HeadlineSchema = require("../server/models/headlines");
-const fetchHeadLines = require("./fetch-headlines");
+const fetchHeadLines = require("./fetch-headlines").fetchHeadlines;
 
 const mongoose = require("../server/db");
 
