@@ -8,7 +8,7 @@ function HeadLineList ({ headlines }) {
   return (
     <div className="HeadLineList">
       <div className='flag' id="flagSpain"></div>
-      <div className="wrapper">
+      <div className="wrapper wrapper-spain">
         {headlines.map(headline => {
           if (headline.locale === 'es-ES')
             return <HeadLineItem key={headline.url} headline={headline} />
