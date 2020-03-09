@@ -1,4 +1,4 @@
-import React from './node_modules/react';
+import React from 'react';
 import './style.css';
 import HeadLineItem from '../HeadLineItem/HeadLineItem';
 
@@ -10,14 +10,14 @@ function HeadLineList ({ headlines }) {
       <div className='flag' id="flagSpain"></div>
       <div className="wrapper">
         {headlines.map(headline => {
-          if (headline.locale === 'Spain')
+          if (headline.locale === 'es-ES')
             return <HeadLineItem key={headline.url} headline={headline} />
         })}
       </div>
       <div className='flag' id="flagUK"></div>
       <div className="wrapper">
         {headlines.map(headline => {
-          if (headline.locale === 'UK')
+          if (headline.locale === 'en-GB')
             return <HeadLineItem key={headline.url} headline={headline} />
         })}
       </div>
