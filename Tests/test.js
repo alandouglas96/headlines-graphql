@@ -2,11 +2,19 @@ const {getHeadline} = require('../scraper/fetch-headlines');
 const { newspapers } = require('../scraper/newspapers');
 const cheerio = require('cheerio');
 
-// test if the headline location exists
+// test if the headline path is correct
 
 // test if we get a non empty string back as headline
-// check if headline is stored in database
-// check if headlines are rendered when called
+
+// test if headline is stored in database
+
+// test if headlines are rendered when called
+
+// test search function on client side
+
+// test country filter
+
+
 
 const laVanGuardia = newspapers.find(obj => obj.newspaper === 'la-vanguardia');
 
