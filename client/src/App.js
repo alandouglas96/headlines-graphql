@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import HeadLineList from './Components/HeadlineList/HeadLine-list';
+import HeadLineList from './Components/HeadLineList/HeadLineList';
 import ApolloClient from 'apollo-boost';
 import { gql } from "apollo-boost";
 import SearchBar from './Components/SearchBar/SearchBar';

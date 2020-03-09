@@ -1,6 +1,6 @@
-import React from 'react';
+import React from './node_modules/react';
 import './style.css';
-import HeadLineItem from '../HeadLine-item/HeadLine-item';
+import HeadLineItem from '../HeadLineItem/HeadLineItem';
 
 
 function HeadLineList ({ headlines }) {
