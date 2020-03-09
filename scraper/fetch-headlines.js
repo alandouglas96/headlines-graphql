@@ -34,7 +34,6 @@ async function fetchHeadlines () {
     headlines.headlines[obj.newspaper] = { headline, country: obj.country, url: obj.url };
     return headline
   }));
-  console.log(headlines)
   return headlines;
 }
 

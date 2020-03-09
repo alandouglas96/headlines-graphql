@@ -1,4 +1,4 @@
-const { getHeadline } = require('../scraper/fetch-headlines')
+const { getHeadline, fetchHeadlines } = require('../scraper/fetch-headlines')
 const { newspapers } = require('../scraper/newspapers');
 const cheerio = require('cheerio');
 
@@ -13,6 +13,29 @@ describe("Test getHeadline", function () {
   });
 });
 
+describe("Test if all headlines return a headline", function () {
+  var originalTimeout;
+
+  beforeEach(function () {
+    originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
+    jasmine.DEFAULT_TIMEOUT_INTERVAL = 1000000;
+  });
+
+  afterEach(function () {
+    jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;
+  });
+
+  it("all headline should contain a non-empty string", async function () {
+    const result = await fetchHeadlines();
+    let empty = false;
+    for (headline in result.headlines) {
+      console.log('headline',headline)
+      if (headline.headline === '' || undefined)
+        empty = true;
+    }
+    expect(empty).toBe(false);
+  });
+});
 
 
 
