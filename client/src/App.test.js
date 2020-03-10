@@ -3,6 +3,8 @@ import { render, unmountComponentAtNode } from "react-dom";
 import { act } from "react-dom/test-utils";
 import HeadLineList from './Components/HeadLineList/HeadLineList';
 import HeadLineItem from './Components/HeadLineItem/HeadLineItem';
+import App from './App';
+import apiService from './apiService'
 
 
 let container = null;
@@ -44,3 +46,5 @@ it("renders the lists by country", () => {
   }); 
   expect(container.querySelector(".wrapper-spain").textContent).toBe(headlinesSpain);
 });
+
+

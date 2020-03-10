@@ -5,13 +5,14 @@ import ApolloClient from 'apollo-boost';
 import { gql } from "apollo-boost";
 import SearchBar from './Components/SearchBar/SearchBar';
 import breakingNews from './pictures/breaking.png'
+import apiService from './apiService'
 
-function bySearchQuery (query) {
+function bySearchQuery(query) {
   const regex = new RegExp(query)
   return headline => regex.test(headline.headline)
 }
 
-function App () {
+function App() {
 
   const [headlines, setHeadline] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
@@ -20,29 +21,11 @@ function App () {
     ? headlines.filter(bySearchQuery(searchQuery))
     : headlines
 
-  const client = new ApolloClient({
-    uri: 'http://localhost:4000/',
-  });
-
   useEffect(() => {
-    client
-      .query({
-        query: gql`
-        {
-          headline {
-            newspaper
-            headline
-            locale
-            url
-          }
-        }`
-      })
-      .then(result => {
-        setHeadline(result.data.headline)
-      });
-
+    apiService.fetchdata().then(result => {
+      setHeadline(result.data.headline)
+    });
   }, []);
-
 
   return (
     <div className="App">
