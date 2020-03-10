@@ -13,5 +13,8 @@ const HeadlineSchema = new Schema({
   url: { type: String}
 });
 
+
+ 
+
 module.exports = mongoose.model('graphnewsapis', HeadlineSchema);
 
