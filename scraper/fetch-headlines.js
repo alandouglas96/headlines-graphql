@@ -1,7 +1,6 @@
 const moment = require('moment');
 const got = require('got');
 const cheerio = require('cheerio');
-const { newspapers } = require('./newspapers.js');
 
 const currentTime = moment(Date.now());
 
@@ -28,8 +27,8 @@ async function getHeadline (url, path) {
   }
 };
 
-async function fetchHeadlines () {
-  await Promise.all(newspapers.map(async obj => {
+async function fetchHeadlines (data) {
+  await Promise.all(data.map(async obj => {
     const headline = await getHeadline(obj.url, obj.path);
     headlines.headlines[obj.newspaper] = { headline, country: obj.country, url: obj.url };
     return headline

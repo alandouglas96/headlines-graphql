@@ -1,6 +1,8 @@
 const { getHeadline, fetchHeadlines } = require('../scraper/fetch-headlines')
 const { newspapers } = require('../scraper/newspapers');
-const cheerio = require('cheerio');
+const { storeHeadlines } = require('../scraper/store-headlines');
+const mockData = require('./mockData');
+const HeadlineSchema = require('../server/models/headlines');
 
 
 //for this test to work first serve ./newspaperStatic.html
@@ -27,20 +29,27 @@ describe("Test if all headlines return a headline", function () {
 
   it("all headline should contain a non-empty string", async function () {
     const result = await fetchHeadlines();
-    let empty = false;
+    let empty = null;
     for (headline in result.headlines) {
-      if (result.headlines[headline].headline === '' || undefined)
-        empty = true;
+      if (result.headlines[headline].headline === '' || undefined) {
+        empty = headline;
+      }
     }
-    expect(empty).toBe(false);
+    expect(empty).toBe(null);
+  });
+});
+
+describe("Test for storeHeadLines", function () {
+  let inDatabase = false;
+  storeHeadlines(mockData);
+  console.log(HeadlineSchema.find({ headline: 'test' }));
+
+  it("headline should be stored in the database", async function () {
+    expect(inDatabase).toBe(true);
   });
 });
 
 
-
-// test if the headline path is correct
-
-// test if we get a non empty string back as headline
 
 // test if headline is stored in database
 

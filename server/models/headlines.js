@@ -9,8 +9,8 @@ const HeadlineSchema = new Schema({
   time: { type: String, allowNull: false},
   newspaper: { type: String, allowNull: false},
   headline: { type: String, allowNull: false},
-  locale: { type: String, allowNull: false },
-  url: { type: String, allowNull: false }
+  locale: { type: String},
+  url: { type: String}
 });
 
 module.exports = mongoose.model('graphnewsapis', HeadlineSchema);
