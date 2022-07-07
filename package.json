@@ -23,7 +23,7 @@
     "graphql-date": "^1.0.3",
     "hash-sum": "^2.0.0",
     "html-to-text": "^5.1.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "mongoose": "^5.8.4",
     "sgrape": "^0.1.5",
     "underscore": "^1.9.2"
